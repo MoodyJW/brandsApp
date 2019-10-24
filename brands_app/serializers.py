@@ -23,6 +23,7 @@ class BrandSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'id', 'name', 'company']
 
 class CompanySerializer(serializers.HyperlinkedModelSerializer):
+
     class Meta:
         model = Company
         fields = ['url', 'id', 'name', 'country', 'size', 'value', 'parent', 'company_set', 'brand_set']

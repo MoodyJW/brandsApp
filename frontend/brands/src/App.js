@@ -1,16 +1,20 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CustomNavBar from './components/CustomNavbar';
-import CompanyGrid from './components/CompanyGrid';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import SearchBar from './components/SearchBar';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
   } from "react-router-dom";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+
+import CustomNavBar from './components/CustomNavbar';
+import CompanyGrid from './components/CompanyGrid';
+import SearchBar from './components/SearchBar';
+import CompanyList from './components/CompanyList';
+
 
 function App() {
   return (
@@ -40,7 +44,7 @@ function App() {
                         </Container>
                     </Route>
                     <Route path='/about'>
-                        <p>This is an about page.</p>
+                        <CompanyList></CompanyList>
                     </Route>
                 </Switch>
             </Router>
