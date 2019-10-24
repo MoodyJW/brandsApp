@@ -1,0 +1,13 @@
+PW is plaintext when entered in DRF while adding new user, but seems to be hashed?
+
+Should non-admin users be able to add new users? Not sure how that works
+
+
+
+
+
+REACT!
+    Components:
+        NavBar
+        SearchBar
+        Login
