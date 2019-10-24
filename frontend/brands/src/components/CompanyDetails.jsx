@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import image from '../testImage.svg';
+import Brand from './Brand.jsx';
 
 export default class CompanyDetails extends Component {
 
@@ -18,15 +18,7 @@ export default class CompanyDetails extends Component {
     render = () => {
         let company = <p>Select a company!</p>
         if (this.state.company) {
-            company = (
-                <ul>
-                    <img src={image} alt="Company"/>
-                    <li>{this.state.company.name}
-                        <ul>{this.state.company.id}</ul>
-                    </li>
-
-                </ul>
-            )
+            company = this.state.company.brand_set.map((brand) => <li><Brand key={brand.id} name={brand.name}/></li>)
         }
         if (this.props.id && this.props.id !== this.state.loadedID) {
             this.loadCompany()

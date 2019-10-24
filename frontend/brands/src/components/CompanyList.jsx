@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Company from './Company';
 import CompanyDetails from './CompanyDetails';
+// import image from '../testImage.svg';
 
 export default class CompanyList extends Component {
     state = {
@@ -28,8 +29,8 @@ export default class CompanyList extends Component {
         }
         return (
             <ul>
+                {companiez}
                 <CompanyDetails id={this.state.loadedID}/>
-                {companiez}         
             </ul>
         )
     }
