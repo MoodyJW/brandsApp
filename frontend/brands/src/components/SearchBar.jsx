@@ -1,29 +1,64 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from "react-bootstrap/Button";
-import Jumbotron from "react-bootstrap/Jumbotron";
+import axios from 'axios';
 
 export default class SearchBar extends Component {
-    render () {
-        return(
-            <Jumbotron>
-                <Container>
-                    <h1 className='text-center'>Hello, world!</h1>
-                    <br></br>
-                    <p className='text-center'>
-                        Search for your favorite brand or just click on a company below to see all <br></br>
-                        of the subsidiareies and brands owned by just these ten companies!
-                    </p>
-                    <br></br>
-                    <Form className="justify-content-center" inline>
-                        <FormControl type="text" placeholder="Search a brand here" className="mr-sm-2" />
-                        <Button variant="outline-info">Search</Button>
-                    </Form>
-                </Container>
-            </Jumbotron>            
-        )
+    constructor(props) {
+      super(props);
+      this.state = {
+        searchString: "",
+        companies: []
+      };
+      this.handleChange = this.handleChange.bind(this);
     }
-}
+  
+    componentDidMount() {
+        axios.get('http://127.0.0.1:8000/companies/')
+        .then(response => {
+            const companies = response.data
+            this.setState({ companies: companies })
+            console.log ('COMPANIES:', companies)
+        })
+      this.refs.search.focus();
+    }
+  
+    handleChange() {
+      this.setState({
+        searchString: this.refs.search.value
+      });
+    }
+  
+    render() {
+      let _companies = this.state.companies;
+      let search = this.state.searchString.trim().toLowerCase();
+  
+      if (search.length > 0) {
+        _companies = _companies.filter(function(company) {
+          return company.name.toLowerCase().match(search);
+        });
+      }
+  
+      return (
+        <div>
+          <h3>Search for a company here</h3>
+          <div>
+            <input
+              type="text"
+              value={this.state.searchString}
+              ref="search"
+              onChange={this.handleChange}
+              placeholder="type name here"
+            />
+            <ul>
+              {_companies.map(l => {
+                return (
+                  <li>
+                    {l.name} <a href="#">should be a link to brands</a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+      );
+    }
+  }

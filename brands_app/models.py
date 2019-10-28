@@ -29,7 +29,7 @@ class Politician(models.Model):
     office = models.CharField(max_length=50)
     assumed_office = models.DateTimeField()
     donors = models.ManyToManyField('Company')
-
+    cid = models.CharField(max_length=50, blank=True)
     def __str__(self):
         return f"{self.office} {self.name}, {self.state} - {self.party}"
 
