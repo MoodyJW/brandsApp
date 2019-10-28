@@ -26,13 +26,13 @@ export default class CustomNav extends Component {
                         <Nav.Link>About</Nav.Link>
                     </LinkContainer>
                 </Nav>
-                <Container className="justify-content-center mr-5 pr-5">
+                {/* <Container className="justify-content-center mr-5 pr-5">
                     <Form inline>
                         <FormControl type="text" placeholder="Search a brand here" className="mr-sm-2" />
                         <Button variant="outline-info">Search</Button>
                     </Form>
-                </Container>
-                <Nav className="pl-5">
+                </Container> */}
+                <Nav className="justify-content-end" style={{width: "100%"}}>
                     <Nav.Link href="#login">Login/Logout</Nav.Link>
                 </Nav>
             </Navbar>

@@ -12,7 +12,7 @@ import Container from 'react-bootstrap/Container';
 
 import CustomNavBar from './components/CustomNavbar';
 import CompanyGrid from './components/CompanyGrid';
-import SearchBar from './components/SearchBar3';
+import SearchBar from './components/SearchBar';
 import CompanyList from './components/CompanyList';
 
 
