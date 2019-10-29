@@ -7,46 +7,33 @@ import os
 import sys
 from django.conf import settings
 import django
-
 # if not settings.configured:
 #     settings.configure(DEBUG=True)
 
 # settings.configure(DEBUG=True)
-
-
 
 # os.environ['DJANGO_SETTINGS_MODULE'] = 'group_project.settings'
 # settings.configure(DEBUG=True)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'group_project.settings')
 django.setup()
 
-
 # DJANGO_SETTINGS_MODULE = group_project.settings
 from brands_app.models import Brand, Company
 class AppURLopener(urllib.request.FancyURLopener):
     version = "Mozilla/5.0"
-    
 opener = AppURLopener()
 
 def Coca_Cola_Parser():
     #Pull data from website
-    coca_cola = requests.get('https://en.wikipedia.org/wiki/List_of_Coca-Cola_brands')
+    coca_cola = requests.get('https://www.coca-colacompany.com/packages/brands')
     soup = BeautifulSoup(coca_cola.text)
-    cokes = soup.select(".columns > ul > li")
+    cokes = soup.select(".editorial-package .promo img")
     #Turn Soup into Python list
-    coke_li = []
-    for brand in cokes:
-        coke_li.append(brand.get_text())
-    #Remove the text after the -
-    coke_li_no_dash = []
-    for brand in coke_li:
-        coke_li_no_dash.append(brand.split(' –')[0])
-    #Remove the text with []
-    coke_brands = []
-    for brand in coke_li_no_dash:
-       coke_brands.append(brand.split('[')[0].title())   
-    #Remove duplicates  
-    coke_brands = list(dict.fromkeys(coke_brands))
+    coke_brands = {}
+    for index, brand in enumerate(cokes): 
+        coke_brands[brand.get("title")]= {
+        "name": ((brand.get("title").split('.jpg')[0]).split('circle')[0]).title(),
+        "url": "https://www.coca-colacompany.com" + brand.get("src") }
     return coke_brands
 
 def Procter_and_Gamble_Parser():
@@ -233,10 +220,22 @@ def Parser_to_objects(brands_list, parent_company):
             new_brand_obj.save()
     return Brand.objects.all()
 
+def dict_Parser_to_objects(brands_dict, parent_company):
+    for brand in brands_dict:
+        try:
+            selected_brand = Brand.objects.get(name=brands_dict[brand]['name'])
+            selected_brand.url = brands_dict[brand]['url']
+            selected_brand.company.add(parent_company)
+            selected_brand.save()
+        except:
+            new_brand_obj = Brand(name=brands_dict[brand]['name'], img_url=brands_dict[brand]['url'], company=parent_company)
+            new_brand_obj.save()
+    return Brand.objects.all
+
 ###############  
 #Setting up Variable Data to Create objects in Database
 #Getting companys from Database
-coca_cola = Company.objects.get(name="Coca Cola Inc.")
+coca_cola = Company.objects.get(name="Coca-Cola Inc.")
 procter_and_gamble = Company.objects.get(name="Procter & Gamble")
 unilever = Company.objects.get(name="Unilever")
 pepsico = Company.objects.get(name="Pepsico")
