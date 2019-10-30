@@ -28,7 +28,7 @@ export default class CustomNav extends Component {
         return(
             <Navbar fixed='top' bg="dark" variant="dark">
                 <LinkContainer to='/'>
-                    <Navbar.Brand>App Name</Navbar.Brand>
+                    <Navbar.Brand>brandsApp</Navbar.Brand>
                 </LinkContainer>
                 <Nav className="pr-0">
                     <LinkContainer to='/'>
@@ -37,14 +37,13 @@ export default class CustomNav extends Component {
                     <LinkContainer to='/companies'>
                         <Nav.Link>Companies</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to='/about'>
-                        <Nav.Link>About</Nav.Link>
+                    <LinkContainer to='/brands'>
+                        <Nav.Link>Brands</Nav.Link>
                     </LinkContainer>
                 </Nav>
                 <Container className="justify-content-center mr-5 pr-5">
-                    <Form onChange={(e)=>this.handleChange(e)} className='nav navbar-inline'>
-                        <FormControl  type="text" placeholder="Search a brand here" className="mr-sm-2" />
-                        <Button variant="outline-info">Search</Button>
+                    <Form inline onChange={(e)=>this.handleChange(e)} className='nav navbar-inline'>
+                        <FormControl  type="text" placeholder="Search a brand here" className="mr-sm-2" /><Button variant="outline-info">Search</Button>
                     </Form>
                 </Container>
                 <Nav className="pl-5">

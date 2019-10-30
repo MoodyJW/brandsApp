@@ -19,6 +19,8 @@ class Company(models.Model):
     value = models.IntegerField(default=0)
     cid = models.CharField(max_length=200, default='')
     parent = models.ForeignKey('self', blank=True, on_delete=models.CASCADE, null=True)
+    img_url = models.CharField(max_length=500, default='')
+    donations = models.CharField(max_length=1000, default='')
 
     def __str__(self):
         return self.name

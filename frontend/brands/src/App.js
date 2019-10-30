@@ -13,7 +13,7 @@ import Container from 'react-bootstrap/Container';
 import CustomNavBar from './components/CustomNavbar';
 import CompanyGrid from './components/CompanyGrid';
 import SearchBar from './components/SearchBar';
-import CompanyList from './components/CompanyList';
+import CompanyList from './components/CompanyList/CompanyList';
 import BrandList from './components/BrandList/BrandList.jsx'
 
 
@@ -44,8 +44,8 @@ function App() {
                             </Row>
                         </Container>
                     </Route>
-                    <Route path='/about'>
-                        <CompanyList></CompanyList>
+                    <Route path='/brands'>
+                        <h1>Brands</h1>
                         <BrandList/>
                     </Route>
                 </Switch>

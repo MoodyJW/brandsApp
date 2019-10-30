@@ -33,20 +33,26 @@ def Coca_Cola_Parser():
     for index, brand in enumerate(cokes): 
         coke_brands[brand.get("title")]= {
         "name": ((brand.get("title").split('.jpg')[0]).split('circle')[0]).title(),
-        "url": "https://www.coca-colacompany.com" + brand.get("src") }
+        "img_url": "https://www.coca-colacompany.com" + brand.get("src") }
     return coke_brands
 
 def Procter_and_Gamble_Parser():
-    #Pull data from website
     req = Request('https://us.pg.com/brands/', headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urlopen(req).read()
     soup = BeautifulSoup(webpage)
-    brands = soup.select(".brand__headline")
-    #Turn Soup into Python Data
-    pg_brands = []
-    for brand in brands:
-        pg_brands.append(brand.get_text().title())
+    brand_names = soup.select(".brand__headline")
+    brand_scrape= soup.select(".brand")
+    pg_brands = {}
+    for brand in brand_scrape:
+        name = str(brand).split('brand__headline">')[1].split('</h4>')[0]
+        img_url = str(brand).split('src="//')[1].split('"/></figure')[0]
+        pg_brands[brand.get_text().title()]={
+            "name": name.title().strip(),
+            "img_url": 'http://' + img_url.strip()
+        }
     return pg_brands
+
+##^^^^^^^^^UPDATED to Dictionaries
 
 def Unilever_Parser():
     #Pull data from website --US only
@@ -224,18 +230,18 @@ def dict_Parser_to_objects(brands_dict, parent_company):
     for brand in brands_dict:
         try:
             selected_brand = Brand.objects.get(name=brands_dict[brand]['name'])
-            selected_brand.url = brands_dict[brand]['url']
+            selected_brand.img_url = brands_dict[brand]['img_url']
             selected_brand.company.add(parent_company)
             selected_brand.save()
         except:
-            new_brand_obj = Brand(name=brands_dict[brand]['name'], img_url=brands_dict[brand]['url'], company=parent_company)
+            new_brand_obj = Brand(name=brands_dict[brand]['name'], img_url=brands_dict[brand]['img_url'], company=parent_company)
             new_brand_obj.save()
     return Brand.objects.all
 
 ###############  
 #Setting up Variable Data to Create objects in Database
 #Getting companys from Database
-coca_cola = Company.objects.get(name="Coca-Cola Inc.")
+coca_cola = Company.objects.get(name="Coca Cola Inc.")
 procter_and_gamble = Company.objects.get(name="Procter & Gamble")
 unilever = Company.objects.get(name="Unilever")
 pepsico = Company.objects.get(name="Pepsico")
@@ -263,9 +269,8 @@ kraft_heinz_brands = Kraft_Heinz_Parser()
 nestle_brands = Nestle_Parser()
 
 # Adds objects to database with CC as parent
-print (coca_cola_brands)
-Parser_to_objects(coca_cola_brands, coca_cola)
-Parser_to_objects(procter_and_gamble_brands, procter_and_gamble)
+dict_Parser_to_objects(coca_cola_brands, coca_cola)
+dict_Parser_to_objects(procter_and_gamble_brands, procter_and_gamble)
 Parser_to_objects(unilever_brands, unilever)
 Parser_to_objects(pepsico_brands, pepsico)
 Parser_to_objects(kellogs_brands, kellogs)

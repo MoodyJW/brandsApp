@@ -26,12 +26,12 @@ class CompanySerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Company
-        fields = ['url', 'id', 'name', 'country', 'size', 'value', 'parent', 'company_set', 'brand_set']
+        fields = ['url', 'id', 'name', 'img_url', 'cid', 'country', 'size', 'value', 'parent', 'company_set', 'brand_set']
 
 class PoliticianSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Politician
-        fields = ['url', 'id', 'name', 'state', 'district', 'party', 'office', 'assumed_office', 'donors']
+        fields = ['url', 'id', 'cid', 'name', 'state', 'district', 'party', 'office', 'assumed_office', 'donors']
 
 class LegislationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

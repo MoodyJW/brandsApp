@@ -7,7 +7,7 @@ import './Brand.css'
 export default class Brand extends Component {
     render() {
         return(
-                    <Col xs={6} md={4}>
+                    <Col xs={6} md={4} onClick={this.props.click}>
                     <Image src={this.props.img_url} rounded-circle />
                     <p><b>{this.props.name}</b></p>
                     </Col>
