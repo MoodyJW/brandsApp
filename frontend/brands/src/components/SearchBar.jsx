@@ -49,10 +49,10 @@ export default class SearchBar extends Component {
                 <Container>
                     <h1 className='text-center'>Search for a company here</h1>
                     <br></br>
-                    <p className='text-center'>
+                    {/* <p className='text-center'>
                         Search for a company or just click on a company below to see all <br></br>
                         of the subsidiareies and brands owned by just these ten companies!
-                    </p>
+                    </p> */}
                     <br></br>
                     <Form className="justify-content-center" inline>
                         <FormControl 
