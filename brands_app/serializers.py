@@ -20,7 +20,7 @@ class CustomUserSerializer(serializers.HyperlinkedModelSerializer):
 class BrandSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Brand
-        fields = ['url', 'id', 'name', 'company']
+        fields = ['url', 'id', 'name', 'company', 'img_url']
 
 class CompanySerializer(serializers.HyperlinkedModelSerializer):
 
