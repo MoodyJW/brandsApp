@@ -14,6 +14,7 @@ import CustomNavBar from './components/CustomNavbar';
 import CompanyGrid from './components/CompanyGrid';
 import SearchBar from './components/SearchBar';
 import CompanyList from './components/CompanyList';
+import BrandList from './components/BrandList/BrandList.jsx'
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
                     </Route>
                     <Route path='/about'>
                         <CompanyList></CompanyList>
+                        <BrandList/>
                     </Route>
                 </Switch>
             </Router>

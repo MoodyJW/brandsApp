@@ -8,7 +8,22 @@ import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 
+
+
 export default class CustomNav extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            search:''
+        }
+    }
+
+    handleChange(e){
+        this.setState({
+            search:e.target.value
+        })
+    }
+
     render () {
         return(
             <Navbar fixed='top' bg="dark" variant="dark">
@@ -27,8 +42,8 @@ export default class CustomNav extends Component {
                     </LinkContainer>
                 </Nav>
                 <Container className="justify-content-center mr-5 pr-5">
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search a brand here" className="mr-sm-2" />
+                    <Form onChange={(e)=>this.handleChange(e)} className='nav navbar-inline'>
+                        <FormControl  type="text" placeholder="Search a brand here" className="mr-sm-2" />
                         <Button variant="outline-info">Search</Button>
                     </Form>
                 </Container>
@@ -39,3 +54,4 @@ export default class CustomNav extends Component {
         )
     }
 }
+
