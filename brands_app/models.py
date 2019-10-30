@@ -29,10 +29,9 @@ class Politician(models.Model):
     district = models.CharField(max_length=10, blank=True)
     party = models.CharField(max_length=50)
     office = models.CharField(max_length=50)
-    assumed_office = models.CharField(max_length=50)    
+    assumed_office = models.DateTimeField()
     donors = models.ManyToManyField('Company', blank=True)
     cid = models.CharField(max_length=100, default='Open Secrets CID')
-
     def __str__(self):
         return f"{self.office} {self.name}, {self.state} - {self.party}"
 
