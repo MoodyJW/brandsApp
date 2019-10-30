@@ -10,11 +10,22 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
+<<<<<<< HEAD
 import CustomNavBar from './components/CustomNavbar';
 import CompanyGrid from './components/CompanyGrid';
 import SearchBar from './components/SearchBar';
 import CompanyList from './components/CompanyList/CompanyList';
 import BrandList from './components/BrandList/BrandList.jsx'
+=======
+import CustomNavBar from './components/CustomNavbar/CustomNavbar';
+import CompanyGrid from './components/Company/CompanyGrid';
+import SearchBar from './components/SearchBar/SearchBar';
+import LoginForm from './components/Authentication/LoginForm.jsx';
+import NewUserForm from './components/Authentication/NewUserForm.jsx';
+
+// import CompanyList from './components/Company/CompanyList';
+// import BrandList from './components/BrandList/BrandList.jsx'
+>>>>>>> b675715c0a2ebfb2d3521bc15a84c4dca10b8186
 
 
 function App() {
@@ -44,9 +55,19 @@ function App() {
                             </Row>
                         </Container>
                     </Route>
+<<<<<<< HEAD
                     <Route path='/brands'>
                         <h1>Brands</h1>
                         <BrandList/>
+=======
+                    <Route path='/about'>
+                        <Container>
+                            {/* <CompanyList></CompanyList>
+                            <BrandList></BrandList> */}
+                            {/* <LoginForm></LoginForm> */}
+                            <NewUserForm></NewUserForm>
+                        </Container>
+>>>>>>> b675715c0a2ebfb2d3521bc15a84c4dca10b8186
                     </Route>
                 </Switch>
             </Router>
