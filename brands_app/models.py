@@ -19,9 +19,22 @@ class Company(models.Model):
     value = models.IntegerField(default=0)
     cid = models.CharField(max_length=200, default='')
     parent = models.ForeignKey('self', blank=True, on_delete=models.CASCADE, null=True)
-
+    donations = models.ManyToManyField('Donation', blank=True)
     def __str__(self):
         return self.name
+
+class Donation(models.Model):
+    cycle = models.CharField(max_length=10, default="2020")
+    politician = models.ForeignKey('Politician', on_delete=models.CASCADE)
+    lobbyist = models.ForeignKey('Lobbyist', on_delete=models.CASCADE)
+    total = models.IntegerField(default=0)
+    pacs = models.ForeignKey('PAC', on_delete=models.CASCADE)
+
+class PAC(models.Model):
+    name = models.CharField(max_length=100)
+
+class Lobbyist(models.Model):
+    name = models.CharField(max_length=100)
 
 class Politician(models.Model):
     name = models.CharField(max_length=100)

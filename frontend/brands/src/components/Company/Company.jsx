@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../testImage.svg';
+import image from '../../testImage.svg';
 
 let Company = (props) => {
     return (<figure>
