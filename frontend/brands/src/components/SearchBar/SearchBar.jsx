@@ -67,8 +67,8 @@ export default class SearchBar extends Component {
                     <ListGroup>
                         {_companies.map(l => {
                                     return (
-                                    <ListGroup.Item>
-                                        <a href="#">{l.name}</a>
+                                    <ListGroup.Item key={l.id}>
+                                        <a href={"http://127.0.0.1:8000/companies/" + l.id}>{l.name}</a>
                                     </ListGroup.Item>
                                     );
                                 })}

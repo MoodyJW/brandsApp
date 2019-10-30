@@ -13,9 +13,9 @@ import Container from 'react-bootstrap/Container';
 import CustomNavBar from './components/CustomNavbar/CustomNavbar';
 import CompanyGrid from './components/Company/CompanyGrid';
 import SearchBar from './components/SearchBar/SearchBar';
-import LoginForm from './components/Authentication/LoginForm.jsx';
-import NewUserForm from './components/Authentication/NewUserForm.jsx';
 
+// import LoginForm from './components/Authentication/LoginForm.jsx';
+// import NewUserForm from './components/Authentication/NewUserForm.jsx';
 // import CompanyList from './components/Company/CompanyList';
 // import BrandList from './components/BrandList/BrandList.jsx'
 
@@ -51,8 +51,6 @@ function App() {
                         <Container>
                             {/* <CompanyList></CompanyList>
                             <BrandList></BrandList> */}
-                            {/* <LoginForm></LoginForm> */}
-                            <NewUserForm></NewUserForm>
                         </Container>
                     </Route>
                 </Switch>

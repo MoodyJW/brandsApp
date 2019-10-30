@@ -48,7 +48,7 @@ export default class CustomNav extends Component {
                     </Form>
                 </Container> */}
                 <Nav className="justify-content-end" style={{width: "100%"}}>
-                    <Nav.Link href="#login">Login/Logout</Nav.Link>
+                    <Nav.Link href="http://127.0.0.1:8000/api-auth/login/?next=/">Login/Logout</Nav.Link>
                 </Nav>
             </Navbar>
         )
