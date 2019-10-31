@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import './Brand.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Col from 'react-bootstrap/Col';
-import './Brand.css';
 import Figure from 'react-bootstrap/Figure';
 
 export default class Brand extends Component {

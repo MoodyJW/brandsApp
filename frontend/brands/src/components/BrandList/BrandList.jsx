@@ -14,7 +14,6 @@ export default class BrandList extends Component {
              .then(response => {
                  const brands = response.data
                 this.setState({ brands });
-                console.log (brands);
             })
     }
 

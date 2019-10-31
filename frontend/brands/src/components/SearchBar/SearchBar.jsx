@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import BrandList from '../BrandList/BrandList.jsx';
 import CompanyList from '../Company/CompanyList.jsx';
+import PoliticianList from '../Politicians/PoliticianList.jsx'
 
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -19,23 +19,11 @@ export default class SearchBar extends Component {
         companySearchString: "",
         brandSearchString: "",
         politicianSearchString: "",
-        companies: [],
-        brands: [],
-        politicians: [],
       };
       this.handleBrandChange = this.handleBrandChange.bind(this);
       this.handleCompanyChange = this.handleCompanyChange.bind(this);
       this.handlePoliticianChange = this.handlePoliticianChange.bind(this);
     }
-  
-    componentDidMount() {
-        Promise.all([
-            axios.get('http://127.0.0.1:8000/politicians/')
-        ]).then(([politicianData]) => {
-            const politicians = politicianData.data
-            this.setState({politicians: politicians})
-        })
-      }
   
     handleCompanyChange() {
         this.setState({
@@ -54,13 +42,6 @@ export default class SearchBar extends Component {
     }
     
     render() {
-        let _politicians = this.state.politicians;
-        let politicianSearch = this.state.politicianSearchString.trim().toLowerCase();
-        if (politicianSearch.length > 0) {
-            _politicians = _politicians.filter(function(politician) {
-                return politician.name.toLowerCase().match(politicianSearch);
-            });
-        }
   
         return (
             <Jumbotron>
@@ -115,13 +96,7 @@ export default class SearchBar extends Component {
                             </Form>
                             <br></br>
                             <ListGroup>
-                                {_politicians.map(l => {
-                                            return (
-                                                <ListGroup.Item key={l.id}>
-                                                    <a href={"http://127.0.0.1:8000/politicians/" + l.id}>{l.name}</a>
-                                                </ListGroup.Item>
-                                            );
-                                })}
+                                <PoliticianList filter={this.state.politicianSearchString}></PoliticianList>
                             </ListGroup>
                         </Tab>
                     </Tabs>

@@ -32,15 +32,6 @@ function App() {
                             <SearchBar></SearchBar>
                         </Container>
                     </Route>
-                    {/* <Route path='/companies' exact component={CompanyGrid}>
-                        <Container>
-                            <Row>
-                                <Col>
-                                    <CompanyGrid></CompanyGrid>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Route> */}
                     <Route path='/climatetable' exact component={ClimateDataTable}>
                         <Container>
                             <ClimateDataTable></ClimateDataTable>

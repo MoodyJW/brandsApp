@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Company from './Company';
-// import CompanyDetails from './CompanyDetails';
-// import BrandList from './BrandList/BrandList';
 import Row from 'react-bootstrap/Row'; 
 import Col from 'react-bootstrap/Col';
 import Brand from '../Brand/Brand'
@@ -18,7 +16,6 @@ export default class CompanyList extends Component {
             .then(response => {
                 const companies = response.data
                 this.setState({ companies: companies });
-                console.log (companies);
             })
     }
 
