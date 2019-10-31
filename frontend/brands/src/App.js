@@ -13,6 +13,7 @@ import Container from 'react-bootstrap/Container';
 import CustomNavBar from './components/CustomNavbar/CustomNavbar';
 import CompanyGrid from './components/Company/CompanyGrid';
 import SearchBar from './components/SearchBar/SearchBar';
+import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
 
 // import LoginForm from './components/Authentication/LoginForm.jsx';
 // import NewUserForm from './components/Authentication/NewUserForm.jsx';
@@ -47,10 +48,14 @@ function App() {
                             </Row>
                         </Container>
                     </Route>
+                    <Route path='/climatetable' exact component={ClimateDataTable}>
+                        <Container>
+                            <ClimateDataTable></ClimateDataTable>
+                        </Container>
+                    </Route>
                     <Route path='/about'>
                         <Container>
-                            {/* <CompanyList></CompanyList>
-                            <BrandList></BrandList> */}
+                            <p className='text-center'><b>Stuff and things</b></p>
                         </Container>
                     </Route>
                 </Switch>

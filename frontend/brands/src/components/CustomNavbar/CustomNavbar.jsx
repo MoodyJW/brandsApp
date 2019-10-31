@@ -37,6 +37,9 @@ export default class CustomNav extends Component {
                     <LinkContainer to='/companies'>
                         <Nav.Link>Companies</Nav.Link>
                     </LinkContainer>
+                    <LinkContainer to='/climatetable'>
+                        <Nav.Link>Climate Data</Nav.Link>
+                    </LinkContainer>
                     <LinkContainer to='/about'>
                         <Nav.Link>About</Nav.Link>
                     </LinkContainer>
@@ -47,9 +50,9 @@ export default class CustomNav extends Component {
                         <Button variant="outline-info">Search</Button>
                     </Form>
                 </Container> */}
-                <Nav className="justify-content-end" style={{width: "100%"}}>
+                {/* <Nav className="justify-content-end" style={{width: "100%"}}>
                     <Nav.Link href="http://127.0.0.1:8000/api-auth/login/?next=/">Login/Logout</Nav.Link>
-                </Nav>
+                </Nav> */}
             </Navbar>
         )
     }

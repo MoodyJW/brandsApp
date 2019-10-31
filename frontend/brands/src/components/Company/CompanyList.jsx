@@ -28,10 +28,9 @@ export default class CompanyList extends Component {
         let companiez1;
         let companiez2;
         if (this.state.companies.length > 0) {
-            companiez = this.state.companies.map((p) =>
-                <Company name={p.name} key={p.id} brand_set={p.brand_set} url={p.url} onClick={() => this.setState({loadedID: p.url})}/>)
-            console.log('loadedID:', this.state.loadedID)
-            console.log('BRANDZ', <Brand/>)
+            companiez = this.state.companies.filter(company => company.name.toLowerCase().match(this.props.filter))
+            companiez = companiez.map((p) =>
+                <Company name={p.name} key={p.id} brand_set={p.brand_set} onClick={() => this.setState({loadedID: p.url})}/>)
             companiez0 = companiez.filter((p, i) => i % 3 === 0);
             companiez1 = companiez.filter((p, i) => i % 3 === 1);
             companiez2 = companiez.filter((p, i) => i % 3 === 2);

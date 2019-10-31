@@ -10,9 +10,9 @@ export default class BrandList extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://127.0.0.1:8000/brands/`)
-            .then(response => {
-                const brands = response.data
+         axios.get(`http://127.0.0.1:8000/brands/`)
+             .then(response => {
+                 const brands = response.data
                 this.setState({ brands });
                 console.log (brands);
             })
@@ -23,7 +23,8 @@ export default class BrandList extends Component {
         let brands1 = <h1> Loading... .. . </h1>;
         let brands2 = <h1> Loading... .. . </h1>;
         let brands3 = <h1> Loading... .. . </h1>;
-        brands = this.state.brands.map(brand => <Brand name={brand.name} img_url={brand.img_url} company_url={brand.company} />)
+        brands = this.state.brands.filter(brand => brand.name.toLowerCase().match(this.props.filter))
+        brands = brands.map(brand => <Brand key={brand.id} name={brand.name} img_url={brand.img_url} company_url={brand.company} />)
         brands1 = brands.filter((b,i)=> i%3 === 0)
         brands2 = brands.filter((b,i)=> i%3 === 1)
         brands3 = brands.filter((b,i)=> i%3 === 2)

@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Image from 'react-bootstrap/Image'
 import Col from 'react-bootstrap/Col';
-import './Brand.css'
+import './Brand.css';
+import Figure from 'react-bootstrap/Figure';
 
 export default class Brand extends Component {
     render() {
         return(
                     <Col xs={6} md={4}>
-                    <Image src={this.props.img_url} rounded-circle />
-                    <p><b>{this.props.name}</b></p>
+                        <Figure>
+                            <Figure.Image src={this.props.img_url} roundedCircle/>
+                            <Figure.Caption><b>{this.props.name}</b></Figure.Caption>
+                        </Figure>
                     </Col>
         )
     }
