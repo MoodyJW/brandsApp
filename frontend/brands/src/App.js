@@ -11,15 +11,8 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 import CustomNavBar from './components/CustomNavbar/CustomNavbar';
-import CompanyGrid from './components/Company/CompanyGrid';
 import SearchBar from './components/SearchBar/SearchBar';
 import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
-
-// import LoginForm from './components/Authentication/LoginForm.jsx';
-// import NewUserForm from './components/Authentication/NewUserForm.jsx';
-// import CompanyList from './components/Company/CompanyList';
-// import BrandList from './components/BrandList/BrandList.jsx'
-
 
 function App() {
   return (
@@ -39,7 +32,7 @@ function App() {
                             <SearchBar></SearchBar>
                         </Container>
                     </Route>
-                    <Route path='/companies' exact component={CompanyGrid}>
+                    {/* <Route path='/companies' exact component={CompanyGrid}>
                         <Container>
                             <Row>
                                 <Col>
@@ -47,7 +40,7 @@ function App() {
                                 </Col>
                             </Row>
                         </Container>
-                    </Route>
+                    </Route> */}
                     <Route path='/climatetable' exact component={ClimateDataTable}>
                         <Container>
                             <ClimateDataTable></ClimateDataTable>
