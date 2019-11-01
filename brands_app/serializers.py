@@ -36,7 +36,7 @@ class BrandSerializer(serializers.ModelSerializer):
     company = serializers.SlugRelatedField(slug_field='name', read_only=True)
     class Meta:
         model = Brand
-        fields = ['id', 'name', 'company', 'img_url']
+        fields = ['id', 'name', 'company', 'img_url', 'company_id']
 
 class CompanySerializer(serializers.ModelSerializer):
     brand_set = serializers.SlugRelatedField(slug_field='name', many=True, read_only=True)

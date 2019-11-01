@@ -1,3 +1,5 @@
+https://www.coca-colacompany.com/stories/manufacturing-emissions
+
 GHG emissions
     Emissions ratio
         2017

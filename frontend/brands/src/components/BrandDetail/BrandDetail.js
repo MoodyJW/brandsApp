@@ -31,7 +31,7 @@ function BrandDetail(props) {
             <Container className="brand-detail">
                 <Row>
             <Image src={loadedBrand.img_url}/>
-            <h3>{loadedBrand.name} owned by <CompanyIcon id={loadedBrand.company}/></h3> 
+            <h3>{loadedBrand.name} owned by <CompanyIcon id={loadedBrand.company_id}/></h3> 
             </Row>
             </Container>
         )

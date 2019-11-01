@@ -9,6 +9,9 @@ class Brand(models.Model):
     def __str__(self):
         return f"{self.name} owned by {self.company}"
 
+    def company_id(self):
+        return self.company.id
+
 class CustomUser(AbstractUser):
     favorite_brands = models.ManyToManyField(Brand, blank=True)
 

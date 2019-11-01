@@ -18,6 +18,7 @@ function CompanyIcon(props) {
     }
 
     useEffect(() => {
+        console.log('ID:', props.id)
         load_comp()
     }, [props.id])
 
