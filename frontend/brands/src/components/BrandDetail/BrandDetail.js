@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CompanyIcon from '../Company/CompanyIcon'
 import Image from 'react-bootstrap/Image'
-import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row'
+import Container from 'react-bootstrap/Container';
 import './BrandDetail.css'
 import axios from 'axios'
 
@@ -27,11 +28,12 @@ function BrandDetail(props) {
         )
     } else {
         return (
-        <Card style={{ width: '40rem'}}>
-            <Image src={loadedBrand.img_url} className='card-img-top'/>
-            <h3>{loadedBrand.name} owned by <CompanyIcon url={loadedBrand.company}/></h3> 
-            
-        </Card>
+            <Container className="brand-detail">
+                <Row>
+            <Image src={loadedBrand.img_url}/>
+            <h3>{loadedBrand.name} owned by <CompanyIcon id={loadedBrand.company}/></h3> 
+            </Row>
+            </Container>
         )
     }
         
