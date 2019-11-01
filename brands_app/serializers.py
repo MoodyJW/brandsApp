@@ -33,6 +33,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
 #         return user
 
 class BrandSerializer(serializers.ModelSerializer):
+    company = serializers.SlugRelatedField(slug_field='name', read_only=True)
     class Meta:
         model = Brand
         fields = ['id', 'name', 'company', 'img_url']
@@ -65,7 +66,10 @@ class PACSerializer(serializers.ModelSerializer):
         fields = ['id', 'name']
 
 class DonationSerializer(serializers.ModelSerializer):
+    lobbyist = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    politician = serializers.SlugRelatedField(slug_field='name', read_only=True)
+    company_set = serializers.SlugRelatedField(slug_field='name', many=True, read_only=True)
     class Meta:
         model = Donation
-        fields = ['id', 'cycle', 'politician', 'lobbyist', 'total', 'pacs']
+        fields = ['id', 'cycle', 'politician', 'lobbyist', 'total', 'pacs', 'company_set']
   
