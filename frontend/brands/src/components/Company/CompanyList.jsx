@@ -3,7 +3,7 @@ import axios from 'axios';
 import Company from './Company';
 import Row from 'react-bootstrap/Row'; 
 import Col from 'react-bootstrap/Col';
-import Brand from '../Brand/Brand'
+// import Brand from '../Brand/Brand'
 
 export default class CompanyList extends Component {
     state = {
@@ -27,7 +27,7 @@ export default class CompanyList extends Component {
         if (this.state.companies.length > 0) {
             companiez = this.state.companies.filter(company => company.name.toLowerCase().match(this.props.filter))
             companiez = companiez.map((p) =>
-                <Company name={p.name} key={p.id} brand_set={p.brand_set} onClick={() => this.setState({loadedID: p.url})}/>)
+                <Company name={p.name} key={p.id} brand_set={p.brand_set} onClick={() => this.setState({loadedID: p.id})}/>)
             companiez0 = companiez.filter((p, i) => i % 3 === 0);
             companiez1 = companiez.filter((p, i) => i % 3 === 1);
             companiez2 = companiez.filter((p, i) => i % 3 === 2);
@@ -42,9 +42,6 @@ export default class CompanyList extends Component {
                     </Col>
                     <Col>
                         {companiez2}
-                    </Col>
-                    <Col xs={5}>
-                        <Brand company={this.state.loadedID}/>
                     </Col>
                 </Row>
         )

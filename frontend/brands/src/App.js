@@ -13,6 +13,7 @@ import Container from 'react-bootstrap/Container';
 import CustomNavBar from './components/CustomNavbar/CustomNavbar';
 import SearchBar from './components/SearchBar/SearchBar';
 import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
+import DataGrid from './components/Table/ClimateDataTable.jsx';
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
                     </Route>
                     <Route path='/about'>
                         <Container>
-                            <p className='text-center'><b>Stuff and things</b></p>
+                            {/* <p className='text-center'><b>Stuff and things</b></p> */}
+                            <DataGrid></DataGrid>
                         </Container>
                     </Route>
                 </Switch>
