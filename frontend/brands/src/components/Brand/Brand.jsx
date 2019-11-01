@@ -7,7 +7,7 @@ import Figure from 'react-bootstrap/Figure';
 export default class Brand extends Component {
     render() {
         return(
-                    <Col xs={6} md={4}>
+                    <Col xs={6} md={4} onClick={this.props.click}>
                         <Figure>
                             <Figure.Image src={this.props.img_url} roundedCircle/>
                             <Figure.Caption><b>{this.props.name}</b></Figure.Caption>

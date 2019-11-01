@@ -9,7 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-
+import CompanyList from './components/CompanyList/CompanyList';
+import BrandList from './components/BrandList/BrandList.jsx'
 import CustomNavBar from './components/CustomNavbar/CustomNavbar';
 import SearchBar from './components/SearchBar/SearchBar';
 import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
@@ -18,6 +19,7 @@ function App() {
   return (
 
         <>
+        
             <Router>
                 <Container>
                     <Row>
@@ -37,10 +39,9 @@ function App() {
                             <ClimateDataTable></ClimateDataTable>
                         </Container>
                     </Route>
-                    <Route path='/about'>
-                        <Container>
-                            <p className='text-center'><b>Stuff and things</b></p>
-                        </Container>
+                    <Route path='/brands'>
+                        <h1>Brands</h1>
+                        <BrandList/>
                     </Route>
                 </Switch>
             </Router>
