@@ -9,18 +9,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import CompanyList from './components/CompanyList/CompanyList';
 import BrandList from './components/BrandList/BrandList.jsx'
 import CustomNavBar from './components/CustomNavbar/CustomNavbar';
 import SearchBar from './components/SearchBar/SearchBar';
 import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
-import DataGrid from './components/Table/ClimateDataTable.jsx';
 
 function App() {
   return (
-
         <>
-        
             <Router>
                 <Container>
                     <Row>
