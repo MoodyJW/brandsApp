@@ -42,20 +42,12 @@ class CompanySerializer(serializers.ModelSerializer):
     company_set = serializers.SlugRelatedField(slug_field='name', many=True, read_only=True)
     class Meta:
         model = Company
-<<<<<<< HEAD
-        fields = ['url', 'id', 'name', 'img_url', 'cid', 'country', 'size', 'value', 'parent', 'company_set', 'brand_set']
-=======
-        fields = ['id', 'name', 'country', 'size', 'value', 'parent', 'company_set', 'donations', 'brand_set']
->>>>>>> b675715c0a2ebfb2d3521bc15a84c4dca10b8186
+        fields = ['url', 'id', 'name', 'img_url', 'cid', 'country', 'size', 'value', 'parent', 'company_set', 'lobbying_total_year', 'brand_set']
 
 class PoliticianSerializer(serializers.ModelSerializer):
     class Meta:
         model = Politician
-<<<<<<< HEAD
         fields = ['url', 'id', 'cid', 'name', 'state', 'district', 'party', 'office', 'assumed_office', 'donors']
-=======
-        fields = ['id', 'name', 'state', 'district', 'party', 'office', 'assumed_office', 'donors']
->>>>>>> b675715c0a2ebfb2d3521bc15a84c4dca10b8186
 
 class LegislationSerializer(serializers.ModelSerializer):
     class Meta:

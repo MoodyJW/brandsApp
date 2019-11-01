@@ -6,6 +6,9 @@ from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from brands_app.permissions import IsOwnerOrReadOnly, IsAdminUserOrReadOnly
+# from rest_framework.authentication import SessionAuthentication, BasicAuthentication 
+
+# To not perform the csrf check previously happening
 # from knox.models import AuthToken
 
 # trying to use knox, but went back to default DRF
@@ -22,6 +25,10 @@ from brands_app.permissions import IsOwnerOrReadOnly, IsAdminUserOrReadOnly
 #             "user": CustomUserSerializer(user, context=self.get_serializer_context()).data,
 #             "token": AuthToken.objects.create(user)
 #         })
+# class CsrfExemptSessionAuthentication(SessionAuthentication):
+
+#     def enforce_csrf(self, request):
+#         return  
 
 class PoliticianViewSet(viewsets.ModelViewSet):
     queryset = Politician.objects.all()
@@ -31,7 +38,8 @@ class PoliticianViewSet(viewsets.ModelViewSet):
 class CustomUserViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = CustomUserSerializer
-    # permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
+    # authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
 
 class BrandViewSet(viewsets.ModelViewSet):
     queryset = Brand.objects.all()

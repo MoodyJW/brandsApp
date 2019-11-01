@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'react';
+import axios from 'axios';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -8,40 +8,55 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
-export default class Login extends Component {
+// document.cookie for token
+// document.cookie.match(/csrftoken=([A-Za-z0-9]+)/)
+// (async () => {
+// 	let resp = await fetch("/users/2/", {
+// 		method: "PUT",
+// 		body: JSON.stringify({email: "hax0rz@none.com", username: 'user1', password: 'password'}),
+// 		headers: {'X-CSRFTOKEN': token, 'Content-Type': 'application/json'}
+// 	});
+// 	let data = await resp.json();
+// 	console.log("data:", data)
+// })() 
+
+export default class LoginForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          users: '',
+          users: [],
           username: '',
         };
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
-    componentDidMount() {
-        axios.get('http://127.0.0.1:8000/users/')
-        .then(response => {
-            const users = response.data
-            this.setState({ users: users })
-            console.log ('USERS:', users)
-        })
-        this.refs.username.focus();
-    }
+
+        // async handleSubmit() {
+        //     let resp = await fetch("/users/1", {
+        //         		method: "PUT",
+        //         		body: JSON.stringify({username: 'user1', password: 'password'}),
+        //         		headers: {'X-CSRFTOKEN': document.cookie.match(/csrftoken=([A-Za-z0-9]+)/)[1], 'Content-Type': 'application/json'}
+        //         	});
+        //         	let data = await resp.json();
+        //         	console.log("data:", data)
+        //         }
+
+    // componentDidMount() {
+    //     axios.get('http://127.0.0.1:8000/users/')
+    //     .then(response => {
+    //         const users = response.data
+    //         this.setState({ users: users })
+    //         console.log ('USERS:', users)
+    //     })
+    //     this.refs.username.focus();
+    // }
   
-    handleChange() {
-        this.setState({
-            username: this.refs.username.value
-        });
-    }
+    // handleSubmit() {
+    //     this.setState({
+    //         username: this.refs.username.value
+    //     });
+    // }
   
     render() {
-        let _companies = this.state.companies;
-        let search = this.state.searchString.trim().toLowerCase();
-  
-        if (search.length > 0) {
-            _companies = _companies.filter(function(company) {
-            return company.name.toLowerCase().match(search);
-            });
-        }
         return (
             <Jumbotron>
             <Container className="justify-content-center">
@@ -54,7 +69,9 @@ export default class Login extends Component {
                                 <Form.Control 
                                     type="username" 
                                     placeholder="Enter username"
-                                    ref="username" 
+                                    ref="username"                         
+                                    // value={this.state.username} 
+                                    onSubmit={this.handleSubmit}
                                 />
                                 <Form.Text className="text-muted">
                                 We'll never give your email address to anyone.
