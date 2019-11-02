@@ -10,11 +10,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import BrandList from './components/BrandList/BrandList.jsx'
-import CustomNavBar from './components/CustomNavbar/CustomNavbar';
+import CustomNavBar from './components/CustomNavbar/CustomNavbar.jsx';
 import SearchBar from './components/SearchBar/SearchBar';
-import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
-import LineGraph2 from './components/LineGraph/LineGraph2.jsx';
-import Data from './components/LineGraph/Data.jsx';
+import LineGraph from './components/LineGraph/LineGraph.jsx';
+import LineAreaGraph from './components/LineAreaGraph/LineAreaGraph.jsx';
+import ClimateData from './components/ClimateData/ClimateData.jsx';
 
 function App() {
   return (
@@ -33,12 +33,10 @@ function App() {
                             <SearchBar></SearchBar>
                         </Container>
                     </Route>
-                    <Route path='/climatetable' exact component={ClimateDataTable}>
-                        {/* <Container>
-                            <ClimateDataTable></ClimateDataTable>
+                    <Route path='/climatedata' exact component={LineAreaGraph}>
+                        <Container>
+                            <ClimateData></ClimateData>
                         </Container>
-                        <Data></Data> */}
-                        <LineGraph2></LineGraph2>
                     </Route>
                     <Route path='/brands'>
                         <h1>Brands</h1>
