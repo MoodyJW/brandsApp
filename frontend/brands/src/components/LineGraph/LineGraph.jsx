@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CanvasJSReact from '../../canvasjs.react.js';
-//var CanvasJSReact = require('./canvasjs.react');
-// var CanvasJS = CanvasJSReact.CanvasJS;
+
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export default class LineGraph extends Component {
@@ -32,22 +31,18 @@ export default class LineGraph extends Component {
                     }
                     e.chart.render();
                 },
-                // itemmouseover: function(e){e.dataSeries.dataPoints.set("markerSize, 20")}
             },
             data: [{				
                 type: "spline",
                 name: "Coca Cola Inc",
                 showInLegend: true,
                 connectNullData: true,
-                // markerSize: 10,
                 toolTipContent: "{label}<br/>{name}: {y}",
-                dataPoints: [
-                    
+                dataPoints: [ 
                     { label: "2015",  y: 5580000 },
                     { label: "2016", y: 5450000 },
                     { label: "2017", y: 5540000 },
                     { label: "2018",  y: 5550000 },
-                    
                 ]
             },
             {				
@@ -57,7 +52,6 @@ export default class LineGraph extends Component {
                 connectNullData: true,
                 toolTipContent: "{label}<br/>{name}: {y}",
                 dataPoints: [
-                    
                     { label: "2015",  y: 5100000 },
                     { label: "2016", y: 4800000 },
                     { label: "2017", y: 4600000 },
@@ -71,7 +65,6 @@ export default class LineGraph extends Component {
                 connectNullData: true,
                 toolTipContent: "{label}<br/>{name}: {y}",
                 dataPoints: [
-                    
                     { label: "2015",  y: 945000 },
                     { label: "2016", y: 882000 },
                     { label: "2017", y: 831000 },
@@ -85,36 +78,18 @@ export default class LineGraph extends Component {
                 connectNullData: true,
                 toolTipContent: "{label}<br/>{name}: {y}<br/>{indexLabel}",
                 dataPoints: [
-                    
                     { label: "2015",  y: null },
                     { label: "2016", y: 1150000, indexLabel: "Scope 2 market-based emissions not included", indexLabelFontWeight: "bold" },
                     { label: "2017", y: 1730000 },
                     { label: "2018",  y: 1680000  },
                 ]
             },
-            // {				
-            //     type: "spline",
-            //     name: "US Per Capita",
-            //     showInLegend: true,
-            //     connectNullData: true,
-            //     toolTipContent: "{label}<br/>{name}: {y}",
-            //     dataPoints: [
-            //         { label: "2014", y: 16.5},
-            //         { label: "2015",  y: null,},
-            //         { label: "2016", y: null },
-            //         { label: "2017", y: 15.7 },
-            //         { label: "2018",  y: null },
-            //     ]
-            // },
         ]
-            
         }  
             
         return (
             <div>
-                <CanvasJSChart options = {options}
-                    /* onRef = {ref => this.chart = ref} */
-                />
+                <CanvasJSChart options = {options}/>
             </div>
         );
     }

@@ -8,8 +8,6 @@ import Button from "react-bootstrap/Button";
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 
-
-
 export default class CustomNavBar extends Component {
     constructor(props){
         super(props)

@@ -1,5 +1,4 @@
-import React, { Component, useRef, useEffect } from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 import axios from 'axios';
 import Brand from '../Brand/Brand'
 import BrandDetail from '../BrandDetail/BrandDetail'
@@ -52,33 +51,32 @@ export default class BrandList extends Component {
     
         if (this.state.selectedBrandId !== null) {
             return (
-            <>
-                
-                <Container ref={this.myRef} style={{ justifyContent: 'center' }}>>
-                    <Row >
-                        <h3>Selected Brand:</h3>
-                        <Button onClick={() => this.toggleOpenClose()}>X</Button>
-                    </Row>
-                    <BrandDetail id={this.state.selectedBrandId} />
-                    <Row className='needs-space'>
-                        {brands1}
-                        {brands2}
-                        {brands3}
-                    </Row>
-                </Container>           
-            </>         
+                <>        
+                    <Container ref={this.myRef} style={{ justifyContent: 'center' }}>>
+                        <Row >
+                            <h3>Selected Brand:</h3>
+                            <Button onClick={() => this.toggleOpenClose()}>X</Button>
+                        </Row>
+                        <BrandDetail id={this.state.selectedBrandId} />
+                        <Row className='needs-space'>
+                            {brands1}
+                            {brands2}
+                            {brands3}
+                        </Row>
+                    </Container>           
+                </>         
             )
         } else {
             return (
-            <>
-                <Container>
-                    <Row>
-                        {brands1}
-                        {brands2}
-                        {brands3}
-                    </Row>
-                </Container>           
-            </> 
+                <>
+                    <Container>
+                        <Row>
+                            {brands1}
+                            {brands2}
+                            {brands3}
+                        </Row>
+                    </Container>           
+                </> 
             )
         }
     }

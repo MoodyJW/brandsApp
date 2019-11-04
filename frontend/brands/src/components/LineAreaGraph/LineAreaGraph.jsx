@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import CanvasJSReact from '../../canvasjs.react.js';
-import Container from 'react-bootstrap/Container';
-//var CanvasJSReact = require('./canvasjs.react');
-// var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 export default class LineAreaChart extends Component {
     render() {
@@ -38,12 +35,7 @@ export default class LineAreaChart extends Component {
 			]
 		}
 		return (
- 
-                <CanvasJSChart options = {options}
-                    /* onRef={ref => this.chart = ref} */
-                />
- 
-		
+            <CanvasJSChart options = {options}/>
 		);
 	}
 }

@@ -33,15 +33,14 @@ export default class PolticianList extends Component {
         politicians2 = politicians.filter((p,i) => i%3===1)
         politicians3 = politicians.filter((p,i) => i%3===2)
         
-        return (
-            
-                <Container>
-                    <Row>
-                        {politicians1}
-                        {politicians2}
-                        {politicians3}
-                    </Row>
-                </Container>
+        return (            
+            <Container>
+                <Row>
+                    {politicians1}
+                    {politicians2}
+                    {politicians3}
+                </Row>
+            </Container>
             
         )
     }

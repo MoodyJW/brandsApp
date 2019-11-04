@@ -36,7 +36,6 @@ function BrandDetail(props) {
             </Container>
         )
     }
-        
 }
 
 export default BrandDetail

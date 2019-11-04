@@ -5,8 +5,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { LinkContainer } from 'react-router-bootstrap';
 
-
-
 export default class CustomNav extends Component {
     constructor(props){
         super(props)
@@ -42,4 +40,3 @@ export default class CustomNav extends Component {
         )
     }
 }
-
