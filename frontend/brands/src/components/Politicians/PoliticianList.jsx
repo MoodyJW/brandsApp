@@ -34,7 +34,7 @@ export default class PolticianList extends Component {
         politicians3 = politicians.filter((p,i) => i%3===2)
         
         return (
-            <>
+            
                 <Container>
                     <Row>
                         {politicians1}
@@ -42,7 +42,7 @@ export default class PolticianList extends Component {
                         {politicians3}
                     </Row>
                 </Container>
-            </>
+            
         )
     }
 }

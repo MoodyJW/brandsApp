@@ -3,7 +3,7 @@ import axios from 'axios';
 import Company from './Company';
 import Row from 'react-bootstrap/Row'; 
 import Col from 'react-bootstrap/Col';
-// import Brand from '../Brand/Brand'
+import Container from 'react-bootstrap/Container';
 
 export default class CompanyList extends Component {
     state = {
@@ -33,17 +33,13 @@ export default class CompanyList extends Component {
             companiez2 = companiez.filter((p, i) => i % 3 === 2);
         }
         return (
+            <Container>
                 <Row>
-                    <Col>
-                        {companiez0}
-                    </Col>
-                    <Col>
-                        {companiez1}
-                    </Col>
-                    <Col>
-                        {companiez2}
-                    </Col>
+                    {companiez0}
+                    {companiez1}
+                    {companiez2}
                 </Row>
+            </Container>
         )
     }
 }

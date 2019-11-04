@@ -42,8 +42,7 @@ function CompanyIcon(props) {
                 <div id='desc'>
                     <p>Lobbying Total 2019: ${loadedComp.lobbying_total_year.toLocaleString()}</p>
                     <p>PAC's Total 2019:</p>
-                    <p>BrandsApp Rating:</p>
-                    <Rating  fullSymbol='fas fa-leaf' initialRating={2.5} readonly/>
+                    <p>BrandsApp Rating: <Rating  fullSymbol='fas fa-leaf' initialRating={2.5} readonly/></p>
                 </div>
             </OverlayTrigger>
             

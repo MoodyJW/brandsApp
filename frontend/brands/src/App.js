@@ -4,7 +4,6 @@ import {
     Switch,
     Route,
   } from "react-router-dom";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -12,8 +11,6 @@ import Container from 'react-bootstrap/Container';
 import BrandList from './components/BrandList/BrandList.jsx'
 import CustomNavBar from './components/CustomNavbar/CustomNavbar.jsx';
 import SearchBar from './components/SearchBar/SearchBar';
-import LineGraph from './components/LineGraph/LineGraph.jsx';
-import LineAreaGraph from './components/LineAreaGraph/LineAreaGraph.jsx';
 import ClimateData from './components/ClimateData/ClimateData.jsx';
 
 function App() {
@@ -28,20 +25,9 @@ function App() {
                     </Row>
                 </Container>
                 <Switch>
-                    <Route path='/' exact component={SearchBar}>
-                        <Container>
-                            <SearchBar></SearchBar>
-                        </Container>
-                    </Route>
-                    <Route path='/climatedata' exact component={LineAreaGraph}>
-                        <Container>
-                            <ClimateData></ClimateData>
-                        </Container>
-                    </Route>
-                    <Route path='/brands'>
-                        <h1>Brands</h1>
-                        <BrandList/>
-                    </Route>
+                    <Route path='/' exact component={SearchBar}/>
+                    <Route path='/climatedata' exact component={ClimateData}/>
+                    <Route path='/brands' exact component={BrandList}/>
                 </Switch>
             </Router>
         </>

@@ -9,6 +9,7 @@ import Tab from 'react-bootstrap/Tab';
 
 const containerStyle = {
     border: '1px solid',
+    maxWidth: '95%',
 }
 
 export default class ClimateData extends Component {
@@ -21,7 +22,7 @@ export default class ClimateData extends Component {
                     </Tab>
                     <Tab eventKey="coca-cola" title="Coca-Cola">
                         <LineAreaGraph  style={{width: "100%"}}></LineAreaGraph>
-                    </Tab>
+                    </Tab>  
                     <Tab eventKey="etc" title="Etc">
                         <DoughnutGraph></DoughnutGraph>
                     </Tab>
