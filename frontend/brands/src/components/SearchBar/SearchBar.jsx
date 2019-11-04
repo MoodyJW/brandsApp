@@ -57,7 +57,7 @@ export default class SearchBar extends Component {
         <Container style={containerStyle}>
             <Jumbotron style={jumboStyle}>
                 <Container>
-                    <Tabs defaultActiveKey="companies" id="search-tab">
+                    <Tabs defaultActiveKey="companies" id="search-tab" mountOnEnter={true}>
                         <Tab eventKey="companies" title="Companies">
                             <h1 className='text-center'>Search for a company by name</h1>
                             <br></br>
