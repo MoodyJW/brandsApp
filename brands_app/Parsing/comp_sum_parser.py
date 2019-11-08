@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import urllib.request
-from brands_app.models import Politician, Company, Donation, Lobbyist
+from .models import Politician, Company, Donation, Lobbyist
 
 companies = Company.objects.all()
 open_secrets_key = 'edc22e5b2f7a4e1f701ef86da3976e6b'
