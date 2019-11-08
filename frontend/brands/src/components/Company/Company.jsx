@@ -1,11 +1,18 @@
-import React from 'react';
-import image from '../../testImage.svg';
+import React, { Component } from 'react';
+import './Company.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Col from 'react-bootstrap/Col';
+import Figure from 'react-bootstrap/Figure';
 
-let Company = (props) => {
-    return (<figure>
-                <img src={image} onClick={props.onClick} alt='company logo'/>
-                <figcaption>{props.name}</figcaption>
-            </figure>)
+export default class Company extends Component {
+    render() {
+        return(
+                    <Col xs={6} md={4} onClick={this.props.click}>
+                        <Figure>
+                            <Figure.Image src={this.props.img_url} roundedCircle/>
+                            <Figure.Caption><b>{this.props.name}</b></Figure.Caption>
+                        </Figure>
+                    </Col>
+        )
+    }
 }
-
-export default Company;

@@ -1,5 +1,4 @@
 import React, { Component, useRef, useEffect } from 'react';
-import { render } from 'react-dom';
 import axios from 'axios';
 import Brand from '../Brand/Brand'
 import BrandDetail from '../BrandDetail/BrandDetail'
@@ -8,14 +7,7 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import './BrandList.css'
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
-
 export default class BrandList extends Component {
-
-    constructor(props) {
-        super(props)
-        this.myRef = React.createRef()   // Create a ref object 
-    }
 
     state = {
         brands: [],
@@ -53,8 +45,7 @@ export default class BrandList extends Component {
         if (this.state.selectedBrandId !== null) {
             return (
             <>
-                
-                <Container ref={this.myRef} style={{ justifyContent: 'center' }}>>
+                <Container style={{ justifyContent: 'center' }}>>
                     <Row >
                         <h3>Selected Brand:</h3>
                         <Button onClick={() => this.toggleOpenClose()}>X</Button>

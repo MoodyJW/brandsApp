@@ -42,7 +42,7 @@ class CompanySerializer(serializers.ModelSerializer):
     company_set = serializers.SlugRelatedField(slug_field='name', many=True, read_only=True)
     class Meta:
         model = Company
-        fields = ['url', 'id', 'name', 'img_url', 'cid', 'country', 'size', 'value', 'parent', 'company_set', 'lobbying_total_year', 'brand_set']
+        fields = ['url', 'id', 'name', 'img_url', 'cid', 'country', 'size', 'value', 'parent', 'company_set', 'lobbying_total_year', 'politicians_total_year', 'brand_set']
 
 class PoliticianSerializer(serializers.ModelSerializer):
     class Meta:

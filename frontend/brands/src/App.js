@@ -9,11 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import CompanyList from './components/CompanyList/CompanyList';
 import BrandList from './components/BrandList/BrandList.jsx'
 import CustomNavBar from './components/CustomNavbar/CustomNavbar';
 import SearchBar from './components/SearchBar/SearchBar';
+import Image from "react-bootstrap/Image";
 import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
+import './App.css'
 
 function App() {
   return (
@@ -30,9 +31,14 @@ function App() {
                 </Container>
                 <Switch>
                     <Route path='/' exact component={SearchBar}>
-                        <Container>
-                            <SearchBar></SearchBar>
-                        </Container>
+                    
+                        <div className="main_container">
+                            
+                            <Container>
+                            <Image src={require('./bg1.jpg')} fluid />
+                                <SearchBar></SearchBar>
+                            </Container>
+                        </div>
                     </Route>
                     <Route path='/climatetable' exact component={ClimateDataTable}>
                         <Container>

@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 
 import BrandList from '../BrandList/BrandList.jsx';
-import CompanyList from '../Company/CompanyList.jsx';
+import CompanyList from '../CompanyList/CompanyList.jsx';
 import PoliticianList from '../Politicians/PoliticianList.jsx'
-
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
-import Jumbotron from "react-bootstrap/Jumbotron";
 import ListGroup from "react-bootstrap/ListGroup";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
@@ -44,7 +42,7 @@ export default class SearchBar extends Component {
     render() {
   
         return (
-            <Jumbotron>
+            <>
                 <Container>
                     <Tabs defaultActiveKey="companies" id="search-tab">
                         <Tab eventKey="companies" title="Companies">
@@ -101,7 +99,7 @@ export default class SearchBar extends Component {
                         </Tab>
                     </Tabs>
                 </Container>
-            </Jumbotron>
+            </>
       );
     }
 }
