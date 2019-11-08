@@ -4,23 +4,21 @@ import {
     Switch,
     Route,
   } from "react-router-dom";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import BrandList from './components/BrandList/BrandList.jsx'
-import CustomNavBar from './components/CustomNavbar/CustomNavbar';
+import CustomNavBar from './components/CustomNavbar/CustomNavbar.jsx';
 import SearchBar from './components/SearchBar/SearchBar';
 import Image from "react-bootstrap/Image";
-import ClimateDataTable from './components/Table/ClimateDataTable.jsx';
+
 import './App.css'
+import ClimateData from './components/ClimateData/ClimateData.jsx';
 
 function App() {
   return (
-
         <>
-        
             <Router>
                 <Container>
                     <Row>
@@ -30,8 +28,7 @@ function App() {
                     </Row>
                 </Container>
                 <Switch>
-                    <Route path='/' exact component={SearchBar}>
-                    
+                    <Route path='/' exact component={SearchBar}>                  
                         <div className="main_container">
                             
                             <Container>
@@ -40,11 +37,13 @@ function App() {
                             </Container>
                         </div>
                     </Route>
+                    {/*  
                     <Route path='/climatetable' exact component={ClimateDataTable}>
                         <Container>
                             <ClimateDataTable></ClimateDataTable>
                         </Container>
                     </Route>
+                    */}
                     <Route path='/brands'>
                         <h1>Brands</h1>
                         <BrandList/>

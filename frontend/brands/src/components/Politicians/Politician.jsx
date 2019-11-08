@@ -6,9 +6,9 @@ import Figure from 'react-bootstrap/Figure';
 export default class Politician extends Component {
     render() {
         return (
-            <Col xs={6} md={4}>
+            <Col xs={3} className="justify-content-md-center">
                 <Figure>
-                    <Figure.Image src={image} roundedCircle/>
+                    <Figure.Image src={image} style={{display: 'block', margin: 'auto'}} roundedCircle/>
                     <Figure.Caption><b>{this.props.name}, {this.props.state} - {this.props.party}</b></Figure.Caption>
                 </Figure>
             </Col>

@@ -1,6 +1,11 @@
-Get climate data on companies - done except for some missing info
+!IMPORTANT
 
-Add legislators and donors - Lorenzo WIP
+scrape coke and p&g donor lists https://www.opensecrets.org/orgs/recips.php?id=D000000212&cycle=2020
 
-Make login and logout - Jason
 
+
+!LESS IMPORTANT
+
+Finish brand parsing
+Images for legislators
+CSS

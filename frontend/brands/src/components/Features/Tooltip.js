@@ -11,4 +11,4 @@ const renderTooltip = props => (
     >
       Simple tooltip
     </div>
-  );
+);

@@ -5,8 +5,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { LinkContainer } from 'react-router-bootstrap';
 
-
-
 export default class CustomNav extends Component {
     constructor(props){
         super(props)
@@ -31,24 +29,14 @@ export default class CustomNav extends Component {
                     <LinkContainer to='/'>
                         <Nav.Link>Home</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to='/climatetable'>
+                    <LinkContainer to='/climatedata'>
                         <Nav.Link>Climate Data</Nav.Link>
                     </LinkContainer>
                     <LinkContainer to='/brands'>
                         <Nav.Link>Brands</Nav.Link>
                     </LinkContainer>
                 </Nav>
-                {/* <Container className="justify-content-center mr-5 pr-5">
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search a brand here" className="mr-sm-2" />
-                        <Button variant="outline-info">Search</Button>
-                    </Form>
-                </Container> */}
-                <Nav className="justify-content-end" style={{width: "100%"}}>
-                    <Nav.Link href="#login">Login/Logout</Nav.Link>
-                </Nav>
             </Navbar>
         )
     }
 }
-

@@ -10,6 +10,16 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 
+const jumboStyle = {
+    border: '1px solid',
+    maxHeight: '95%',
+}
+
+const containerStyle = {
+    maxWidth: '95%',
+    margin: 'auto',
+}
+
 export default class SearchBar extends Component {
     constructor(props) {
       super(props);
@@ -40,7 +50,6 @@ export default class SearchBar extends Component {
     }
     
     render() {
-  
         return (
             <>
                 <Container>

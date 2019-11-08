@@ -7,7 +7,6 @@ import axios from 'axios'
 import './CompanyIcon.css'
 import Rating from 'react-rating'
 
-
 function CompanyIcon(props) {
 
     const [loadedComp, setLoadedComp] = useState(null)
@@ -18,6 +17,7 @@ function CompanyIcon(props) {
     }
 
     useEffect(() => {
+        console.log('ID:', props.id)
         load_comp()
     }, [props.id])
 

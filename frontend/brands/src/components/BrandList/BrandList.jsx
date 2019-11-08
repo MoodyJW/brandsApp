@@ -1,5 +1,5 @@
 import React, { Component, useRef, useEffect } from 'react';
-import axios from 'axios';
+import axios from 'axios'
 import Brand from '../Brand/Brand'
 import BrandDetail from '../BrandDetail/BrandDetail'
 import Row from 'react-bootstrap/Row';
@@ -61,15 +61,15 @@ export default class BrandList extends Component {
             )
         } else {
             return (
-            <>
-                <Container>
-                    <Row>
-                        {brands1}
-                        {brands2}
-                        {brands3}
-                    </Row>
-                </Container>           
-            </> 
+                <>
+                    <Container>
+                        <Row>
+                            {brands1}
+                            {brands2}
+                            {brands3}
+                        </Row>
+                    </Container>           
+                </> 
             )
         }
     }
