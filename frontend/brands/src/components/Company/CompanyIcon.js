@@ -25,27 +25,30 @@ function CompanyIcon(props) {
         return (
             <h2>Loading...</h2>
         )
-    }   else    {
-            return (
-                <>
-                    <Image src={loadedComp.img_url} className='comp-icon'/>
-                    <OverlayTrigger
-                        key={'#lobbying-total'}
-                        placement={'#lobbying-total'}
-                        overlay={
-                            <Tooltip id={`lobbying-total`}>
-                                Data sourced from Open-Secrets
-                            </Tooltip>
-                        }
-                        >
-                        <div id='desc'>
-                            <p>Lobbying Total 2019: ${loadedComp.lobbying_total_year.toLocaleString()}</p>
-                            <p>PAC's Total 2019:</p>
-                            <p>BrandsApp Rating: <Rating  fullSymbol='fas fa-leaf' initialRating={2.5} readonly/></p>
-                        </div>
-                    </OverlayTrigger>            
-                </>
-        )
+    } else {
+    return (
+        <>
+            <Image src={loadedComp.img_url} className='comp-icon'/>
+            <OverlayTrigger
+                key={'#lobbying-total'}
+                placement={'#lobbying-total'}
+                overlay={
+                    <Tooltip id={`lobbying-total`}>
+                        Data sourced from Open-Secrets
+                    </Tooltip>
+                }
+                >
+                <div id='desc'>
+                    <p>Lobbying Total 2019: ${loadedComp.lobbying_total_year.toLocaleString()}</p>
+                    <p>Total Donated to Politicians: ${loadedComp.politicians_total_year.toLocaleString()}</p>
+                    <p>PAC's Total 2019:</p>
+                    <p>BrandsApp Rating:</p>
+                    <Rating  fullSymbol='fas fa-leaf' initialRating={2.5} readonly/>
+                </div>
+            </OverlayTrigger>
+            
+        </>
+    )
     }
 }
 

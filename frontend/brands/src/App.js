@@ -11,6 +11,9 @@ import Container from 'react-bootstrap/Container';
 import BrandList from './components/BrandList/BrandList.jsx'
 import CustomNavBar from './components/CustomNavbar/CustomNavbar.jsx';
 import SearchBar from './components/SearchBar/SearchBar';
+import Image from "react-bootstrap/Image";
+
+import './App.css'
 import ClimateData from './components/ClimateData/ClimateData.jsx';
 
 function App() {
@@ -25,9 +28,26 @@ function App() {
                     </Row>
                 </Container>
                 <Switch>
-                    <Route path='/' exact component={SearchBar}/>
-                    <Route path='/climatedata' exact component={ClimateData}/>
-                    <Route path='/brands' exact component={BrandList}/>
+                    <Route path='/' exact component={SearchBar}>                  
+                        <div className="main_container">
+                            
+                            <Container>
+                            <Image src={require('./bg1.jpg')} fluid />
+                                <SearchBar></SearchBar>
+                            </Container>
+                        </div>
+                    </Route>
+                    {/*  
+                    <Route path='/climatetable' exact component={ClimateDataTable}>
+                        <Container>
+                            <ClimateDataTable></ClimateDataTable>
+                        </Container>
+                    </Route>
+                    */}
+                    <Route path='/brands'>
+                        <h1>Brands</h1>
+                        <BrandList/>
+                    </Route>
                 </Switch>
             </Router>
         </>

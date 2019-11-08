@@ -30,7 +30,15 @@ class Company(models.Model):
     def lobbying_total_year(self):
         total = 0
         for donation in self.donations.all():
-            total += donation.total 
+            if donation.lobbyist_id != None:
+                total += donation.total 
+        return total
+    
+    def politicians_total_year(self):
+        total = 0
+        for donation in self.donations.all():
+            if donation.politician_id != None:
+                total += donation.total 
         return total
 
 class Donation(models.Model):
