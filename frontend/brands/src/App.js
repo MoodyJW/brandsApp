@@ -27,7 +27,7 @@ function App() {
                     </Row>
                 </Container>
                 <Switch>
-                    <Route path='/'>                  
+                    <Route path='/' exact>                  
                         <div className="main_container">
                             
                             <Container>
@@ -38,7 +38,6 @@ function App() {
                     </Route>
                      
                     <Route path='/climatedata' exact component={ClimateData}/>
-                   
                     <Route path='/brands' exact component={BrandList}/>
                 </Switch>
             </Router>
