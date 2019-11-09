@@ -14,6 +14,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import Image from "react-bootstrap/Image";
 import './App.css'
 import ClimateData from './components/ClimateData/ClimateData.jsx';
+import API from './components/API/API.jsx';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
                      
                     <Route path='/climatedata' exact component={ClimateData}/>
                     <Route path='/brands' exact component={BrandList}/>
+                    <Route path='/API' exact component={API}/>
                 </Switch>
             </Router>
         </>
