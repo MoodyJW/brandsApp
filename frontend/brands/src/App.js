@@ -39,7 +39,6 @@ function App() {
                     </Route>
                      
                     <Route path='/climatedata' exact component={ClimateData}/>
-                    <Route path='/brands' exact component={BrandList}/>
                     <Route path='/API' exact component={API}/>
                 </Switch>
             </Router>

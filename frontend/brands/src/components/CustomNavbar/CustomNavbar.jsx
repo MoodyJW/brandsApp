@@ -32,9 +32,6 @@ export default class CustomNav extends Component {
                     <LinkContainer to='/climatedata'>
                         <Nav.Link>Climate Data</Nav.Link>
                     </LinkContainer>
-                    <LinkContainer to='/brands'>
-                        <Nav.Link>Brands</Nav.Link>
-                    </LinkContainer>
                     <LinkContainer to='/api'>
                         <Nav.Link>API</Nav.Link>
                     </LinkContainer>
